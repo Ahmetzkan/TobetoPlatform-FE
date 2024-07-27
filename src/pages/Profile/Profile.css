@@ -1,5 +1,5 @@
 .profile-card {
-  margin-top: 12rem !important;
+  margin-top: 7rem !important;
 }
 
 .about-me {
@@ -412,6 +412,7 @@
 
 .customCopyToast img {
   margin-right: 5px;
+  margin-top: -2px;
   background-color: white;
 }
 
@@ -423,6 +424,12 @@
 
 .copyToast {
   background: #65b996 !important;
+  color: white !important;
+}
+
+.copyToastError {
+  background: red !important;
+  opacity: 0.8;
   color: white !important;
 }
 

@@ -1,10 +1,7 @@
-.platform {
-    margin-top: 12rem !important;
-}
-
 .platform .platform-content {
     height: auto;
     margin-bottom: 3.5rem;
+    margin-top: 10rem !important;
 }
 
 .platform-content .content-title {

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
@@ -8,12 +8,12 @@ type Props = {
 
 const ProtectedRoute = (props: Props) => {
     const navigate = useNavigate();
-    const tokenState = useSelector((state: any) => state.auth);
+    const tokenState = useSelector((state: any) =>  state.auth);
     useEffect(() => {
         if (!tokenState.isAuthenticated) {
-            navigate("/giris");
+            navigate("/login");
         }
-    }, []);
+    }, [tokenState.isAuthenticated, navigate]);
 
     return <>{props.children}</>;
 };

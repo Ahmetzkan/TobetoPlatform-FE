@@ -25,8 +25,6 @@ export default function SessionsPage(props: any) {
         setDrawerVisible(false);
     };
 
-
-
     const handleAddAccountSession = async (sessionId: any) => {
         const addAccount: AddAccountSessionRequest = {
             sessionId: sessionId,

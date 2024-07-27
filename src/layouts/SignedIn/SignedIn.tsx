@@ -11,7 +11,6 @@ export default function SignedIn() {
     const navigate = useNavigate();
 
     const userState = useSelector((state: any) => state.user);
-
     const location = useLocation();
     const pathArray = location.pathname.split('/');
     const lastPathSegment = pathArray[pathArray.length - 1];

@@ -196,7 +196,7 @@ const Footer = () => {
         </MDBContainer>
 
       </MDBFooter>
-      <div className="fontFooter small"
+      {/* <div className="fontFooter small"
         style={
           lastPathSegment === "katalog" ||
             lastPathSegment === "codecademy" ||
@@ -209,9 +209,6 @@ const Footer = () => {
             lastPathSegment === "" ||
             lastPathSegment === "bireyler-icin" ||
             lastPathSegment === "sifremi-unuttum" ||
-
-
-
             lastPathSegment === "takvim-anasayfa" ? { display: 'none' } : { display: 'block' }}>
         <div className="footer-container">
           <div className="row">
@@ -225,14 +222,12 @@ const Footer = () => {
                 <button className="footer-tobeto-contact-button">
                   <a href="https://tobeto.com/iletisim" >Bize Ulaşın</a>
                 </button>
-
-
               </div>
             </div>
           </div>
         </div>
       </div>
-
+ */}
     </>
   );
 };

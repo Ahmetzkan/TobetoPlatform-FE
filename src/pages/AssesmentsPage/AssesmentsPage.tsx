@@ -33,12 +33,10 @@ export default function AssesmentsPage() {
     const navigate = useNavigate();
     const [subjectStates, setSubjectStates] = useState<{ [key: string]: boolean }>({});
 
-    const [timeLeft, setTimeLeft] = useState(30 * 60); // 30 dakika (saniye cinsinden)
+    const [timeLeft, setTimeLeft] = useState(30 * 60);
     const [startTimer, setStartTimer] = useState(false);
     const minutes = Math.floor(timeLeft / 60);
     const seconds = timeLeft % 60;
-
-
 
     const handleCheckActive = (selectedOption: any, questionId: any) => {
         setSelectedOptionId(selectedOption);
@@ -154,7 +152,7 @@ export default function AssesmentsPage() {
             [subjectName]: false,
         }));
 
-        setShowExamModal(false); // Modalı kapat
+        setShowExamModal(false);
     };
     function changePageIndex(pageIndex: any) {
         setPageIndexState(pageIndex);

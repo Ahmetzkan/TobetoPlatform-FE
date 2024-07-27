@@ -4,9 +4,8 @@
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     width: 260px;
-    height: 90px;
-    border-radius: 12px;
-
+    height: 80px;
+    border-radius: 15px;
 }
 
 .catalog-cart-title {
@@ -17,35 +16,30 @@
     margin-left: 10px;
     display: flex;
     gap: 4px;
-
 }
 
 .catalog-cart-text {
-    font-size: 16px;
+    font-size: 15.5px;
     font-family: "Poppins-Regular";
     font-weight: bold;
     margin-left: 10px;
-
 }
 
-
 .catalog-button {
-    margin-bottom: 190px;
+    margin-bottom: 130px;
     margin-left: 200px;
 }
 
 .catalog-button img {
-    position: absolute;
-    top: 0;
+    margin-left: 250px;
+    margin-top: -80px;
     height: 30px;
-
 }
 
 .catalog-card {
     border-radius: 20px !important;
     border: none !important;
     cursor: pointer;
-
 }
 
 .catalog-card img {

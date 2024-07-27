@@ -25,12 +25,14 @@ export default function AnnouncementCard(props: any) {
                     <span onClick={() => { setModalShow(true); handleRead(); }}>Devamını Oku</span>
                 </div>
             </div>
+            
             <Modals
                 header={true}
                 show={modalShow}
                 onHide={() => setModalShow(false)}
                 title={props.projectName}
                 body={props.announcementDescription}
+                className="announcement-modal" 
             />
         </div>
     );

@@ -57,3 +57,7 @@
 .announcement-footer span:last-child {
     cursor: pointer;
 }
+
+.announcement-modal {
+    margin-top: 80px;
+}

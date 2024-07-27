@@ -2,7 +2,6 @@
 import LoginPageCard from "../../components/LoginPageCard/LoginPageCard";
 import './LoginPage.css';
 import IstanbulCard2 from '../../components/IstanbulCard2/IstanbulCard2';
-import { ToastContainer } from "react-toastify";
 
 export default function LoginPage() {
     return (

@@ -37,8 +37,6 @@ export const ForIndividuals = () => {
           <IstanbulCard title={
             <span>Aradığın  <span className='quote' id='left-quote'>"</span>iş<span className='quote' id='right-quote'>"</span> Burada!</span>}
             onClick={handleClick} />
-
-
         </div>
 
         <div className="container  for-individuals-content-top">

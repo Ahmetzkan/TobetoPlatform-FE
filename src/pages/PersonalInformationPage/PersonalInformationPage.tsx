@@ -23,7 +23,6 @@ import UpdateAddressRequest from '../../models/requests/address/updateAddressReq
 import addressService from '../../services/addressService';
 import GetAddressResponse from '../../models/responses/address/getAddressResponse';
 import UpdateUserRequest from '../../models/requests/user/updateUserRequest';
-import userService from '../../services/userService';
 import "./PersonalInformationPage.css";
 import AddAddressRequest from '../../models/requests/address/addAddressRequest';
 import ProfileToaster from '../../components/ProfileToaster/ProfileToaster';
@@ -271,7 +270,8 @@ export default function PersonalInformationPage() {
                                     <Col md={12}>
                                         <span className="input-area-title">Ülke*</span>
                                         <TobetoSelect
-                                            name="countries"
+                                        //check countries
+                                            name="country"
                                             className="mb-4"
                                             component="select"
                                             onChange={(event: any) => {

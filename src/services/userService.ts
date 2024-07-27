@@ -30,7 +30,6 @@ class UserService extends BaseService<
         return axiosInstance.get<Paginate<GetListUserResponse>>(this.apiUrl + "/GetListInstructor?PageSize=50");
     }
 
-
     getByResetToken(resetTokenUserRequest: ResetTokenUserRequest): Promise<AxiosResponse<GetUserResponse, any>> {
         return axiosInstance.post<GetUserResponse>(this.apiUrl + "/GetByResetToken", resetTokenUserRequest);
     }
@@ -38,10 +37,6 @@ class UserService extends BaseService<
     getByMail(email: string): Promise<AxiosResponse<GetListUserResponse, any>> {
         return axiosInstance.get<GetListUserResponse>(this.apiUrl + "/GetByMail?email=" + email);
     }
-
-
-
-
 }
 
 export default new UserService();

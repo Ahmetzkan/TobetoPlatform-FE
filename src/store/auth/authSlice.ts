@@ -1,26 +1,26 @@
-import { createSlice } from "@reduxjs/toolkit";
-import tokenService from "../../core/services/tokenService";
+    import { createSlice } from "@reduxjs/toolkit";
+    import tokenService from "../../core/services/tokenService";
 
-const getInitialState = () => {
-    if (tokenService.hasToken()) return { isAuthenticated: true };
+    const getInitialState = () => {
+        if (tokenService.hasToken()) return { isAuthenticated: true };
 
-    return { isAuthenticated: false };
-};
+        return { isAuthenticated: false };
+    };
 
-const authSlice = createSlice({
-    name: "auth",
-    initialState: getInitialState(),
-    reducers: {
-        addToken: (state, action) => {
-            tokenService.setToken(action.payload);
-            state.isAuthenticated = true;
+    const authSlice = createSlice({
+        name: "auth",
+        initialState: getInitialState(),
+        reducers: {
+            addToken: (state, action) => {
+                tokenService.setToken(action.payload);
+                state.isAuthenticated = true;
+            },
+            removeToken: state => {
+                tokenService.removeToken();
+                state.isAuthenticated = false;
+            }
         },
-        removeToken: state => {
-            tokenService.removeToken();
-            state.isAuthenticated = false;
-        }
-    },
-});
+    });
 
-export const authReducer = authSlice.reducer;
-export const authActions = authSlice.actions;
+    export const authReducer = authSlice.reducer;
+    export const authActions = authSlice.actions;

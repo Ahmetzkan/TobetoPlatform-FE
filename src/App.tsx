@@ -7,8 +7,6 @@ import Navi from './layouts/Navi/Navi';
 import { useLocation } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
-
-
 function App() {
   const authState = useSelector((state: any) => state.auth);
   const location = useLocation();
@@ -33,7 +31,6 @@ function App() {
         pathArray?.includes("sifremi-unuttum") ||
         pathArray?.includes("reset-password") ||
         lastPathSegment?.includes("kayit-ol") ? "App bg-front-white" : "App bg-front-dark"}
-
 
       style={lastPathSegment === "katalog" ? { marginTop: '11rem' } : { marginTop: '0' }} >
       <>

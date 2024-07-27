@@ -4,7 +4,6 @@ import skillService from '../../services/skillService';
 import { Paginate } from '../../models/paginate';
 import GetListSkillResponse from '../../models/responses/skill/getListSkillResponse';
 import GetListAccountSkillResponse from '../../models/responses/accountSkill/getListAccountSkillResponse';
-import { toast } from 'react-toastify';
 import ProfileToaster from '../../components/ProfileToaster/ProfileToaster';
 import DeleteAccountSkillRequest from '../../models/requests/accountSkill/deleteAccountSkillRequest';
 import accountSkillService from '../../services/accountSkillService';

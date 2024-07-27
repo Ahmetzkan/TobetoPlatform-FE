@@ -31,8 +31,6 @@
 
 .-education-custom-checkbox input:checked~.education-checkmark:after {
     display: block;
-
-
 }
 
 .-education-custom-checkbox .education-checkmark:after {
@@ -43,7 +41,6 @@
     border: solid white;
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
-
 }
 
 .-education-custom-checkbox input:focus~.education-checkmark {
@@ -53,14 +50,6 @@
 .education-check-text {
     margin-left: 45px;
     color: var(--bs-secondary-color);
-
-}
-
-.educational-background .education-info-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
 }
 
 .edu-back-shadow {
@@ -68,7 +57,6 @@
     padding: 20px;
     padding-top: 20px;
 }
-
 
 .edu-delete-btn {
     margin-top: -40px;
@@ -149,7 +137,8 @@ button:not(:disabled) {
 }
 
 .educational-background p {
-    margin-left: 30px;
+    margin-left: 10px;
+    margin-top: 5px;
     color: RGB(158 70 247);
     font-family: "Poppins-Regular";
 

@@ -16,7 +16,6 @@ import { formatDate } from '@fullcalendar/core';
 
 export default function CertificatePage() {
     const userState = useSelector((state: any) => state.user);
-
     const [certificates, setCertificates] = useState<Paginate<GetListCertificateResponse>>();
     const [shows, setShows] = useState(false);
     const [showDeleteCard, setShowDeleteCard] = useState(false);
@@ -32,7 +31,6 @@ export default function CertificatePage() {
             getCertificates();
         }
     };
-
 
     const uppy = new Uppy({
         autoProceed: false,

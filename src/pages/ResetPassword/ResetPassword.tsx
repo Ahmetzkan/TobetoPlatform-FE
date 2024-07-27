@@ -5,19 +5,19 @@ import { Button, Col, Row } from 'react-bootstrap'
 import './ResetPassword.css'
 import ChangePasswordRequest from '../../models/requests/auth/changePasswordRequest'
 import authService from '../../services/authService'
-import { toast } from 'react-toastify'
-import { useLocation, useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import userService from '../../services/userService'
 import { useDispatch } from 'react-redux'
 import { authActions } from '../../store/auth/authSlice'
 import ResetTokenUserRequest from '../../models/requests/user/resetTokenRequest'
-import { PASSWORD_IS_CHANGED } from '../../environment/messages'
+import { PASSWORDS_DO_NOT_MATCH, PASSWORD_CHANGE_FAIL, PASSWORD_IS_CHANGED } from '../../environment/messages'
+import ProfileToaster from '../../components/ProfileToaster/ProfileToaster'
+import ProfileToasterError from '../../components/ProfileToasterError/ProfileToasterError'
 
 
 export default function ResetPassword() {
     const { userId, resetToken } = useParams();
     const navigate = useNavigate();
-
     useEffect(() => {
         if (userId && resetToken) {
             const resetTokenUserRequest: ResetTokenUserRequest = {
@@ -33,27 +33,30 @@ export default function ResetPassword() {
             })
         }
         else navigate("/not-found");
-    })
+    }, [userId, resetToken]);
 
 
     const dispatch = useDispatch();
     const initialValues = {
-        newPassword: "",
-        confirmPassword: ""
+        oldPassword: "",
+        newPassword: ""
     };
 
     const handleChangePassword = async (values: any) => {
         const changePasswordRequest: ChangePasswordRequest = {
             userId: userId!,
+            oldPassword: values.oldPassword,
             newPassword: values.newPassword,
-            oldPassword: values.newPassword
         }
 
         const result = await authService.changePassword(changePasswordRequest)
         if (result.data) {
             dispatch(authActions.removeToken());
+            ProfileToaster({ name: PASSWORD_IS_CHANGED });
             navigate("/giris");
-            toast.success(PASSWORD_IS_CHANGED)
+        }
+        else{
+            ProfileToasterError({ name: PASSWORD_CHANGE_FAIL });
         }
     }
     return (
@@ -65,8 +68,10 @@ export default function ResetPassword() {
                         enableReinitialize
                         initialValues={initialValues}
                         onSubmit={(values) => {
-                            if (values.newPassword === values.confirmPassword) handleChangePassword(values)
-                            else toast.error("Şifreler uyuşmamaktadır.");
+                            if (values.oldPassword === values.newPassword) handleChangePassword(values)
+                            else ProfileToasterError({
+                                name: PASSWORDS_DO_NOT_MATCH
+                            });
                         }}>
                         <Form className="login-form ">
                             <Row>

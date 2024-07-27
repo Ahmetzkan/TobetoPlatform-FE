@@ -1,9 +1,12 @@
 import { toast } from 'react-toastify'
 import { AUTH_ERROR, BUSINESS_ERROR, VALIDATION_ERROR } from "./errorTypes";
+import ProfileToaster from '../../components/ProfileToaster/ProfileToaster';
+import { SERVER_CANNOT_REACHED } from '../../environment/messages';
 
 export const handleError = (error: any) => {
     if (error.code && error.code == "ERR_NETWORK") {
-        toast.error("Sunucuya ulaşılamıyor..");
+        ProfileToaster({ name: SERVER_CANNOT_REACHED });
+
     }
 
     if (error.response && error.response.data && error.response.data.type) {
@@ -19,7 +22,7 @@ export const handleError = (error: any) => {
                 handleAuthError(error.response.data);
                 break;
             default:
-                // handleDefault(error);
+                 handleDefault(error);
                 break;
         }
     }
@@ -30,13 +33,13 @@ export const handleBusinessError = (error: any) => {
 };
 export const handleValidationError = (error: any) => {
     Object.keys(error.errors).forEach(key => {
-        toast.error(`${key}: ${error.errors[key]}`);
+        ProfileToaster(`${key}: ${error.errors[key]}`);
     });
 };
 export const handleAuthError = (error: any) => {
-    toast.error(error.detail);
+    ProfileToaster({ name: error.detail });
 }
-// export const handleDefault = (error: any) => {
-//     toast.error("Bilinmedik hata...");
-//     console.log("Bilinmedik hata..");
-// };
+export const handleDefault = (error: any) => {
+    toast.error("Bilinmedik hata...");
+    console.log("Bilinmedik hata..");
+};

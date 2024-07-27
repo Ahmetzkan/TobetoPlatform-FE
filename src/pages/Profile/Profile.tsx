@@ -28,31 +28,25 @@ import { DEFAULT_PROFILE_PHOTO } from '../../environment/environment';
 import GetAccountResponse from '../../models/responses/account/getAccountResponse';
 import accountLanguageService from '../../services/accountLanguageService';
 import GetListAccountLanguageResponse from '../../models/responses/accountLanguage/getListAccountLanguageResponse';
-import GetAccountLanguageResponse from '../../models/responses/accountLanguage/getAccountLanguageResponse';
-import GetListSkillResponse from '../../models/responses/skill/getListSkillResponse';
 import accountSkillService from '../../services/accountSkillService';
 import GetListAccountSkillResponse from '../../models/responses/accountSkill/getListAccountSkillResponse';
 import GetListAccountActivityMapResponse from '../../models/responses/accountActivityMap/getListAccountActivityMapResponse';
 import accountActivityMapService from '../../services/accountActivityMapService';
-import GetAccountActivityMapResponse from '../../models/responses/accountActivityMap/getAccountActivityMapResponse';
-import { NO_ACITIVTY } from '../../environment/messages';
-
+import { NO_ACTIVITY } from '../../environment/messages';
 
 
 export default function Profile() {
   const [account, setAccount] = useState<GetAccountResponse>();
   const [certificates, setCertificates] = useState<Paginate<GetListCertificateResponse>>();
   const [examResults, setExamResults] = useState<Paginate<GetListExamResultResponse>>();
-  const userState = useSelector((state: any) => state.user);
-  const user = authService.getUserInfo();
-  const dispatch = useDispatch();
   const [accountBadges, setAccountBadges] = useState<Paginate<GetListAccountBadgeResponse>>();
   const [socialMedias, setSocialMedias] = useState<Paginate<GetListSocialMediaResponse>>();
-
   const [accountLanguages, setAccountLanguages] = useState<Paginate<GetListAccountLanguageResponse>>();
   const [accountSkills, setAccountSkills] = useState<Paginate<GetListAccountSkillResponse>>();
   const [heatMapDatas, setHeatMapDatas] = useState<Paginate<GetListAccountActivityMapResponse>>();
-
+  const userState = useSelector((state: any) => state.user);
+  const user = authService.getUserInfo();
+  const dispatch = useDispatch();
 
 
   const [checked, setChecked] = useState<boolean>(false);
@@ -105,7 +99,7 @@ export default function Profile() {
         endDate={new Date(new Date('2024/01/01').setDate(new Date('2024/01/01').getDate() + 369))}
         rectRender={(props: any, data: any,) => {
           if (!data || !data.count || data.count === 0)
-            return <Tooltip placement="top" content={NO_ACITIVTY}>
+            return <Tooltip placement="top" content={NO_ACTIVITY}>
               <rect {...props}></rect>
             </Tooltip>
           else
@@ -373,7 +367,6 @@ export default function Profile() {
                           ))
                         }
                       </div>
-                      {/* <div>Henüz bir sertifika yüklemedin.</div> */}
                     </div>
                   </div>
                 </div>
@@ -456,7 +449,6 @@ export default function Profile() {
                       </div>
                     ))}
                   </div>
-
                 }
               />
             </div>
@@ -502,7 +494,6 @@ export default function Profile() {
 
         </div>
         <div className='col-md-8 col-12'>
-
 
         </div>
       </div>

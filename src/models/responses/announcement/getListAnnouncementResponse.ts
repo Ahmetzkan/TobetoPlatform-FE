@@ -1,4 +1,3 @@
-import { Id } from "react-toastify";
 import { Identifier } from "typescript";
 
 export default interface GetListAnnouncementResponse {

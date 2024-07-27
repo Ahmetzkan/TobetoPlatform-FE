@@ -5,7 +5,6 @@ import TobetoTextInput from '../../utilities/customFormControls/TobetoTextInput'
 import userService from '../../services/userService';
 import GetUserResponse from '../../models/responses/user/getUserResponse';
 import authService from '../../services/authService';
-import { toast } from 'react-toastify';
 import './ForgotPassword.css'
 import * as Yup from 'yup';
 import ProfileToaster from '../../components/ProfileToaster/ProfileToaster';
@@ -19,7 +18,6 @@ export default function ForgotPassword() {
             setUser(result.data)
         })
     }
-
 
     useEffect(() => {
         const handlePasswordReset = async () => {
@@ -64,7 +62,7 @@ export default function ForgotPassword() {
                                         className="text-center"
                                         type="text"
                                         name="email"
-                                        placeholder="example@gmail.com" />
+                                        placeholder="example@example.com" />
                                 </Col>
                             </Row>
                             <Button className="mb-4 forgot-button   " type="submit">

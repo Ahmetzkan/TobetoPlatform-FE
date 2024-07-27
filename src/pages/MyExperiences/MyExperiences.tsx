@@ -221,10 +221,8 @@ export default function MyExperiences() {
                                         <div className="grade-details-content"> İstanbul</div>
                                     </div>
                                     <div>
-                                        <span className="grade-delete" onClick={() => setShowDeleteCard(true)}>
-                                        </span>
-
                                         <span className="grade-info" onClick={() => setShowModal(true)}></span>
+                                        <span className="grade-delete" onClick={() => setShowDeleteCard(true)}></span>
                                     </div>
                                 </div>
 

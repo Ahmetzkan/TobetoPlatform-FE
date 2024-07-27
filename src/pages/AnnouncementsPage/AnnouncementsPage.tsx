@@ -202,7 +202,7 @@ export default function AnnouncementsPage() {
 
 
     return (
-        <div className="row">
+        <div className="">
             <div className="announcements-page-wrapper">
                 <h1 className='announcements-page-title'>Duyurularım</h1>
             </div>

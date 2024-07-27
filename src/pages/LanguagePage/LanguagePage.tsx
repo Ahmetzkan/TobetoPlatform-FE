@@ -45,7 +45,6 @@ export default function LanguagePage() {
         });
 
         accountLanguageService.getByAccountId(user.id).then((result) => {
-            console.log(result.data);
             setAccountLanguage(result.data);
         })
 
@@ -55,7 +54,6 @@ export default function LanguagePage() {
 
         accountLanguageService.getByAccountId(user.id).then((result) => {
             setAccountLanguage(result.data);
-            console.log(result.data);
         })
     }
 

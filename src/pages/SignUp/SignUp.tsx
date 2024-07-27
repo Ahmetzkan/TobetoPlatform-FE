@@ -6,7 +6,7 @@ import authService from '../../services/authService';
 import IstanbulCard2 from "../../components/IstanbulCard2/IstanbulCard2";
 import { authActions } from "../../store/auth/authSlice";
 import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { userActions } from "../../store/user/userSlice";
 
 export default function SignUp() {
@@ -54,7 +54,7 @@ export default function SignUp() {
                 </Col>
                 <Col md={6}>
                     <IstanbulCard2 />
-                </Col>$$
+                </Col>
             </Container>
         </>
     )

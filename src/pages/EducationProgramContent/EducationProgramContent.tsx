@@ -19,7 +19,6 @@ import { Accordion, Image, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import EducationDrawer from '../../components/EducationDrawer/EducationDrawer';
 import AddEducationProgramLikeRequest from '../../models/requests/educationProgramLike/addEducationProgramLikeRequest';
 import DeleteEducationProgramLikeRequest from '../../models/requests/educationProgramLike/deleteEducationProgramLikeRequest';
-import { toast } from 'react-toastify';
 import { GetListEducationProgramResponse } from '../../models/responses/educationProgram/getListEducationProgramResponse';
 import educationProgramService from '../../services/educationProgramService';
 import { QuestionCircleOutlined } from "@ant-design/icons";
@@ -43,6 +42,7 @@ import AddAccountEducationProgramRequest from '../../models/requests/accountEduc
 import accountEducationProgramService from '../../services/accountEducationProgramService';
 import UpdateAccountEducationProgramRequest from '../../models/requests/accountEducationProgram/updateEducationProgramRequest';
 import GetListAccountEducationProgramResponse from '../../models/responses/accountEducationProgram/getAccountListEducationProgramResponse';
+import ProfileToaster from '../../components/ProfileToaster/ProfileToaster';
 
 export default function EducationProgramContent() {
 
@@ -51,7 +51,6 @@ export default function EducationProgramContent() {
     const [isLikedLesson, setIsLikedLesson] = useState(false);
 
     const [isDoneSession, setIsDoneSession] = useState<number>();
-
 
     const [lessonLikeCount, setLessonLikeCount] = useState(0);
     const [educationProgramLikeCount, setEducationProgramLikeCount] = useState(0);
@@ -68,7 +67,6 @@ export default function EducationProgramContent() {
 
     const [sessions, setSessions] = useState<Paginate<GetListSessionResponse>>();
     const [homeworks, setHomeworks] = useState<Paginate<GetListHomeworkResponse>>();
-
 
     const [educationProgramLessons, setEducationProgramLessons] = useState<Paginate<GetListEducationProgramLessonResponse>>();
 
@@ -181,15 +179,13 @@ export default function EducationProgramContent() {
         setIsDoneSession(dataFromSessionPage)
     };
 
-
-
     const addFavorite = () => {
         setIsFavorite(true);
-        toast.success(ADDED_FAVORITE);
+        ProfileToaster({ name: ADDED_FAVORITE });
     };
     const removeFavorite = () => {
         setIsFavorite(false);
-        toast.info(DELETED_FAVORITE);
+        ProfileToaster({ name: DELETED_FAVORITE });
     };
 
     const handleImageClick = () => {
@@ -647,7 +643,7 @@ export default function EducationProgramContent() {
                                     <ReactPlayer
                                         ref={playerRef}
                                         className="lesson-card-video"
-                                        url={lesson?.lessonPath === null || lesson?.lessonPath === undefined ? defaultLesson?.lessonPath : lesson?.lessonPath}
+                                        url={lesson?.lessonPath}
                                         width='100%'
                                         height='100%'
                                         onStart={() => handleAddAccountLessonStatus(selectedLessonId)}
