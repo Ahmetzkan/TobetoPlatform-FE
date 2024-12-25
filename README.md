@@ -1,46 +1,29 @@
-# Getting Started with Create React App
+# **Tobeto Platform**  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### Bu proje, İstanbul Kodluyor organizasyonu altında geliştirilmiş bir etkileşimli video eğitim platformudur.  
 
-## Available Scripts
+![tobeto-platform](https://ahmetzkan.github.io/portfolio/static/media/project2.aa57ae413d575a710036.png)
 
-In the project directory, you can run:
 
-### `npm start`
+## **Kullanılan Teknolojiler**  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. **.NET, C#, Entity Framework:** Uygulama, .NET platformunda C# dili kullanılarak geliştirilmiş ve veritabanı işlemleri Entity Framework ile yönetilmiştir.  
+2. **SOLID Design Principles:** Yazılım, SOLID tasarım prensipleri doğrultusunda yapılandırılmıştır.  
+3. **MsSql:** Veritabanı yönetimi için Microsoft SQL Server tercih edilmiştir.  
+4. **React, JavaScript, TypeScript:** Kullanıcı arayüzü React ile oluşturulmuş, TypeScript ile güvenli hale getirilmiş ve JavaScript ile dinamik etkileşimler sağlanmıştır.  
+5. **Bootstrap, CSS, HTML:** Arayüz tasarımları Bootstrap ile yapılmış, sayfa düzeni ve stilleri için CSS ve HTML kullanılmıştır.
+6. **Redux:** Uygulama genelinde durum yönetimi sağlamak ve bileşenler arası veri akışını kontrol etmek için kullanılmıştır.    
+7. **Redux Toolkit:** Uygulamanın durum yönetimi, Redux Toolkit kullanılarak gerçekleştirilmiştir.
+8. **Axios:** HTTP istekleri ve veri alışverişleri Axios kütüphanesiyle sağlanmıştır.  
+10. **JWT:** Kullanıcı kimlik doğrulama işlemlerinde JSON Web Token teknolojisi kullanılmıştır.
+11. **Refresh Token:** Kullanıcı oturumlarının kesintisiz devam edebilmesi için yenileme token mekanizması uygulanmıştır.  
+12. **Mail Systems:** E-posta doğrulama, bildirim ve şifre sıfırlama işlemleri için e-posta servis entegrasyonu sağlanmıştır.  
+13. **Logging:** Uygulama olaylarının kaydedilmesi ve yönetimi sağlanmıştır.
+14. **Caching:** Verilerin hızlı erişimi için önbellekleme mekanizması uygulanmıştır.    
+15. **Middleware:** İstek ve yanıt işlemlerinde belirli görevleri yerine getiren ara yazılım bileşenleri kullanılmıştır.  
+16. **Validation:** Kullanıcı tarafından girilen verilerin doğrulama süreçleri gerçekleştirilmiştir.  
+17. **Migration:** Veritabanı şemalarının güncellenmesi ve senkronizasyonu sağlanmıştır.  
+18. **Authentication, Authorization:** Kullanıcı kimlik doğrulama ve yetkilendirme mekanizmaları uygulanmıştır.  
+19. **Dependency Injection:** Sınıflar arasındaki bağımlılıklar, bağımlılık enjeksiyonu yöntemiyle azaltılmıştır.  
+20. **LINQ:** .NET platformunda veri sorgulama işlemleri LINQ ile gerçekleştirilmiştir.  
+21. **AutoMapper:** Nesneler arasındaki veri dönüşümleri AutoMapper kullanılarak yapılmıştır.  
